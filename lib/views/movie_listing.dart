@@ -17,17 +17,27 @@ class MovieListing extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(
         padding: EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Column(
           children: [
-            const Text(
-"""Oldboy (2003) (18)
-            
-Southsea Cinema Room
-Tuesday 20 Oct 2026, 18:00 - ends at 19:54"""),
+            Row(
+              spacing: 8,
+              children: [
+                const Text("Oldboy"),
+                const Text("(2003)"),
+                const Text("(18)"),
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const Text("Southsea Cinema Room"),
+            const SizedBox(
+              height: 8,
+            ),
+            const Text("Tuesday 20 Oct 2026, 18:00 - ends at 19:54")
           ],
-        )
-      )
+        ),
+      ),
     );
   }
 }
