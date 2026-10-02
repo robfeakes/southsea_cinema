@@ -40,10 +40,7 @@ class MovieListing extends StatelessWidget {
             Row(
               spacing: 8,
               children: [
-                DropdownMenu<int>(
-                  initialSelection: 0,
-                  dropdownMenuEntries: [],
-                ),
+                TicketSelect(),
                 Text("Adult (£7.50)"),
               ],
             ),
@@ -59,9 +56,7 @@ class MovieListing extends StatelessWidget {
 }
 
 class TicketSelect extends StatefulWidget {
-  final int maxQuantity;
-
-  const TicketSelect({super.key, this.maxQuantity = 5});
+  const TicketSelect({super.key});
 
   @override
   State<TicketSelect> createState() {
@@ -70,9 +65,27 @@ class TicketSelect extends StatefulWidget {
 }
 
 class _TicketSelectState extends State<TicketSelect> {
+  int _quantity = 0;
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return DropdownMenu<int>(
+        initialSelection: 0,
+        onSelected: (int? quantity) {
+          if (quantity != null) {
+            setState(() {
+              _quantity = quantity;
+              print(quantity);
+            });
+          }
+        },
+        dropdownMenuEntries: [
+          DropdownMenuEntry(value: 0, label: "0"),
+          DropdownMenuEntry(value: 1, label: "1"),
+          DropdownMenuEntry(value: 2, label: "2"),
+          DropdownMenuEntry(value: 3, label: "3"),
+          DropdownMenuEntry(value: 4, label: "4"),
+          DropdownMenuEntry(value: 5, label: "5"),
+        ]);
   }
 }
