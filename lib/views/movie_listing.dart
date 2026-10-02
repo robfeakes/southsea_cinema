@@ -15,7 +15,19 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: Container(
+        padding: EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Text(
+"""Oldboy (2003) (18)
+            
+Southsea Cinema Room
+Tuesday 20 Oct 2026, 18:00 - ends at 19:54"""),
+          ],
+        )
+      )
     );
   }
 }
