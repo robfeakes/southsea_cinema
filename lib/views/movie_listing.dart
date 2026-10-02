@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
+//should wrap in theme instead of individual text widget style?
+
 class MovieListing extends StatelessWidget {
   const MovieListing({super.key});
 
@@ -98,6 +100,22 @@ class _TicketSelectState extends State<TicketSelect> {
                 DropdownMenuEntry(value: 4, label: "4"),
                 DropdownMenuEntry(value: 5, label: "5"),
               ],
+              textStyle: TextStyle(
+                color: cinemaSurface,
+              ),
+              inputDecorationTheme: const InputDecorationTheme(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.zero,
+                ),
+                fillColor: cinemaFontWhite,
+                filled: true,
+              ),
+              menuStyle: MenuStyle(
+                //TODO replace depreciation
+                shape: MaterialStateProperty.all(const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero,
+                )),
+              ),
             ),
             Text(
               "Adult (£7.50)",
@@ -112,6 +130,13 @@ class _TicketSelectState extends State<TicketSelect> {
           onPressed: () {
             setState(() => _added = _quantity);
           },
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0),
+            ),
+            backgroundColor: cinemaBrandLight,
+            foregroundColor: cinemaFontWhite,
+          ),
           child: const Text("ADD TO ORDER"),
         ),
         Text("Added to order: $_added"),
