@@ -24,7 +24,9 @@ class MovieListing extends StatelessWidget {
             Row(
               spacing: 8,
               children: [
-                const Text("Oldboy"),
+                const Text(
+                  "Oldboy",
+                ),
                 const Text("(2003)"),
                 const Text("(18)"),
               ],
@@ -38,10 +40,6 @@ class MovieListing extends StatelessWidget {
             const SizedBox(height: 16),
             const Text("Tickets"),
             TicketSelect(),
-            ElevatedButton(
-              onPressed: () => {},
-              child: const Text("ADD TO ORDER"),
-            )
           ],
         ),
       ),
@@ -60,31 +58,45 @@ class TicketSelect extends StatefulWidget {
 
 class _TicketSelectState extends State<TicketSelect> {
   int _quantity = 0;
+  int _added = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8,
       children: [
-        DropdownMenu<int>(
-          initialSelection: 0,
-          onSelected: (int? quantity) {
-            if (quantity != null) {
-              setState(() {
-                _quantity = quantity;
-              });
-            }
-          },
-          dropdownMenuEntries: [
-            DropdownMenuEntry(value: 0, label: "0"),
-            DropdownMenuEntry(value: 1, label: "1"),
-            DropdownMenuEntry(value: 2, label: "2"),
-            DropdownMenuEntry(value: 3, label: "3"),
-            DropdownMenuEntry(value: 4, label: "4"),
-            DropdownMenuEntry(value: 5, label: "5"),
+        Row(
+          spacing: 8,
+          children: [
+            DropdownMenu<int>(
+              initialSelection: 0,
+              onSelected: (int? quantity) {
+                if (quantity != null) {
+                  setState(() {
+                    _quantity = quantity;
+                  });
+                }
+              },
+              dropdownMenuEntries: [
+                DropdownMenuEntry(value: 0, label: "0"),
+                DropdownMenuEntry(value: 1, label: "1"),
+                DropdownMenuEntry(value: 2, label: "2"),
+                DropdownMenuEntry(value: 3, label: "3"),
+                DropdownMenuEntry(value: 4, label: "4"),
+                DropdownMenuEntry(value: 5, label: "5"),
+              ],
+            ),
+            Text("Adult (£7.50)"),
           ],
         ),
-        Text("Adult (£7.50)"),
+        ElevatedButton(
+          onPressed: () {
+            setState(() => _added = _quantity);
+          },
+          child: const Text("ADD TO ORDER"),
+        ),
+        Text("Added to order: $_added"),
       ],
     );
   }
