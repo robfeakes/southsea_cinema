@@ -57,3 +57,22 @@ class MovieListing extends StatelessWidget {
     );
   }
 }
+
+class TicketSelect extends StatefulWidget {
+  final int maxQuantity;
+
+  const TicketSelect({super.key, this.maxQuantity = 5});
+
+  @override
+  State<TicketSelect> createState() {
+    return _TicketSelectState();
+  }
+}
+
+class _TicketSelectState extends State<TicketSelect> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
