@@ -37,13 +37,7 @@ class MovieListing extends StatelessWidget {
             const Text("Please Select Quantities (Up to 5 in total)"),
             const SizedBox(height: 16),
             const Text("Tickets"),
-            Row(
-              spacing: 8,
-              children: [
-                TicketSelect(),
-                Text("Adult (£7.50)"),
-              ],
-            ),
+            TicketSelect(),
             ElevatedButton(
               onPressed: () => {},
               child: const Text("ADD TO ORDER"),
@@ -69,23 +63,29 @@ class _TicketSelectState extends State<TicketSelect> {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownMenu<int>(
-        initialSelection: 0,
-        onSelected: (int? quantity) {
-          if (quantity != null) {
-            setState(() {
-              _quantity = quantity;
-              print(quantity);
-            });
-          }
-        },
-        dropdownMenuEntries: [
-          DropdownMenuEntry(value: 0, label: "0"),
-          DropdownMenuEntry(value: 1, label: "1"),
-          DropdownMenuEntry(value: 2, label: "2"),
-          DropdownMenuEntry(value: 3, label: "3"),
-          DropdownMenuEntry(value: 4, label: "4"),
-          DropdownMenuEntry(value: 5, label: "5"),
-        ]);
+    return Row(
+      spacing: 8,
+      children: [
+        DropdownMenu<int>(
+          initialSelection: 0,
+          onSelected: (int? quantity) {
+            if (quantity != null) {
+              setState(() {
+                _quantity = quantity;
+              });
+            }
+          },
+          dropdownMenuEntries: [
+            DropdownMenuEntry(value: 0, label: "0"),
+            DropdownMenuEntry(value: 1, label: "1"),
+            DropdownMenuEntry(value: 2, label: "2"),
+            DropdownMenuEntry(value: 3, label: "3"),
+            DropdownMenuEntry(value: 4, label: "4"),
+            DropdownMenuEntry(value: 5, label: "5"),
+          ],
+        ),
+        Text("Adult (£7.50)"),
+      ],
+    );
   }
 }
