@@ -18,6 +18,7 @@ class MovieListing extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(8.0),
         child: Column(
+          spacing: 8,
           children: [
             Row(
               spacing: 8,
@@ -27,13 +28,7 @@ class MovieListing extends StatelessWidget {
                 const Text("(18)"),
               ],
             ),
-            const SizedBox(
-              height: 8,
-            ),
             const Text("Southsea Cinema Room"),
-            const SizedBox(
-              height: 8,
-            ),
             const Text("Tuesday 20 Oct 2026, 18:00 - ends at 19:54")
           ],
         ),
