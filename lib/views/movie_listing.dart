@@ -24,21 +24,33 @@ class MovieListing extends StatelessWidget {
             Row(
               spacing: 8,
               children: [
-                const Text(
-                  "Oldboy",
-                ),
-                const Text("(2003)"),
-                const Text("(18)"),
+                const Text("Oldboy (2003) (18)",
+                    style: TextStyle(
+                      color: cinemaFontWhite,
+                      fontSize: 32,
+                    )),
               ],
             ),
-            const Text("Southsea Cinema Room"),
-            const Text("Tuesday 20 Oct 2026, 18:00 - ends at 19:54"),
+            const Text(
+              "Southsea Cinema Room\nTuesday 20 Oct 2026, 18:00 - ends at 19:54",
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 16,
+              ),
+            ),
             const SizedBox(height: 16),
             const Text(
-                "Please note that Discounts / Membership Benefits will be applied once you have selected your tickets"),
-            const Text("Please Select Quantities (Up to 5 in total)"),
+              "Please note that Discounts / Membership Benefits will be applied once you have selected your tickets\nPlease Select Quantities (Up to 5 in total)",
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 16,
+              ),
+            ),
             const SizedBox(height: 16),
-            const Text("Tickets"),
+            const Text(
+              "Tickets",
+              style: cinemaHeaderStyle,
+            ),
             TicketSelect(),
           ],
         ),
@@ -87,7 +99,13 @@ class _TicketSelectState extends State<TicketSelect> {
                 DropdownMenuEntry(value: 5, label: "5"),
               ],
             ),
-            Text("Adult (£7.50)"),
+            Text(
+              "Adult (£7.50)",
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 16,
+              ),
+            ),
           ],
         ),
         ElevatedButton(
