@@ -5,7 +5,7 @@ class Movie {
   final int year;
   final String rating;
   final String description;
-  final DateTime startTime;
+  final String startTime;
   final double runtime;
   final double price;
   final String location;
