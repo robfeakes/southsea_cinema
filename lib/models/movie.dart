@@ -8,7 +8,6 @@ class Movie {
   final String startTime;
   final double runtime;
   final double price;
-  final String location;
   final String imagePath;
 
   const Movie({
@@ -19,7 +18,6 @@ class Movie {
     required this.description,
     required this.startTime,
     required this.price,
-    required this.location,
     required this.runtime,
     required this.imagePath,
   });
