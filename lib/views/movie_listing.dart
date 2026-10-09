@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import "package:southsea_cinema/models/movie.dart";
+import "package:southsea_cinema/widgets/movie_card.dart";
+import "package:southsea_cinema/repositories/movie_repository.dart";
 
 //should wrap in theme instead of individual text widget style?
 
@@ -9,6 +12,9 @@ class MovieListing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final MovieRepository repository = MovieRepository();
+    final List<Movie> movies = repository.getMovies();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle, style: cinemaHeaderStyle),
@@ -17,46 +23,55 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 8,
-          children: [
-            Row(
-              spacing: 8,
-              children: [
-                const Text("Oldboy (2003) (18)",
-                    style: TextStyle(
-                      color: cinemaFontWhite,
-                      fontSize: 32,
-                    )),
-              ],
-            ),
-            const Text(
-              "Southsea Cinema Room\nTuesday 20 Oct 2026, 18:00 - ends at 19:54",
-              style: TextStyle(
-                color: cinemaFontWhite,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              "Please note that Discounts / Membership Benefits will be applied once you have selected your tickets\nPlease Select Quantities (Up to 5 in total)",
-              style: TextStyle(
-                color: cinemaFontWhite,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              "Tickets",
-              style: cinemaHeaderStyle,
-            ),
-            TicketSelect(),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: movies.length,
+        itemBuilder: (context, index) {
+          return MovieCard(
+            movie: movies[index],
+          );
+        },
       ),
+
+      // body: Container(
+      //   padding: EdgeInsets.all(8.0),
+      //   child: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     spacing: 8,
+      //     children: [
+      //       Row(
+      //         spacing: 8,
+      //         children: [
+      //           const Text("Oldboy (2003) (18)",
+      //               style: TextStyle(
+      //                 color: cinemaFontWhite,
+      //                 fontSize: 32,
+      //               )),
+      //         ],
+      //       ),
+      //       const Text(
+      //         "Southsea Cinema Room\nTuesday 20 Oct 2026, 18:00 - ends at 19:54",
+      //         style: TextStyle(
+      //           color: cinemaFontWhite,
+      //           fontSize: 16,
+      //         ),
+      //       ),
+      //       const SizedBox(height: 16),
+      //       const Text(
+      //         "Please note that Discounts / Membership Benefits will be applied once you have selected your tickets\nPlease Select Quantities (Up to 5 in total)",
+      //         style: TextStyle(
+      //           color: cinemaFontWhite,
+      //           fontSize: 16,
+      //         ),
+      //       ),
+      //       const SizedBox(height: 16),
+      //       const Text(
+      //         "Tickets",
+      //         style: cinemaHeaderStyle,
+      //       ),
+      //       TicketSelect(),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
