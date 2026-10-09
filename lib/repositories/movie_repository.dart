@@ -13,7 +13,7 @@ class MovieRepository {
         startTime: "Tuesday 20 Oct 2026 15:00",
         price: 7.50,
         runtime: 120,
-        imagePath: "assets/images/oldboy-(2003)",
+        imagePath: "assets/images/oldboy-(2003).jpg",
       ),
       Movie(
         id: 'pulp-fiction-(1994)',

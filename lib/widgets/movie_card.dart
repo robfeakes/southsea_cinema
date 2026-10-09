@@ -8,6 +8,25 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(movie.id);
+    return Column(
+      children: [
+        Row(
+          children: [
+            Text(movie.name),
+            Text("(${movie.rating})"),
+          ],
+        ),
+        Row(
+          children: [
+            Image.asset(
+              movie.imagePath,
+              width: 80,
+              height: 120,
+              fit: BoxFit.cover,
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
