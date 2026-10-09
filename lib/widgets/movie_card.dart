@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:southsea_cinema/models/movie.dart";
+import "package:southsea_cinema/widgets/ticket_card.dart";
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -26,9 +27,10 @@ class MovieCard extends StatelessWidget {
             ),
             Expanded(
               child: Text(movie.description),
-            )
+            ),
           ],
         ),
+        TicketCard(movie: movie),
       ],
     );
   }
