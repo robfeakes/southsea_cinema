@@ -24,6 +24,7 @@ class MovieCard extends StatelessWidget {
               height: 120,
               fit: BoxFit.cover,
             ),
+            Text(movie.description),
           ],
         ),
       ],
