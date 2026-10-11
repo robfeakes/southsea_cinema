@@ -5,7 +5,7 @@ class Movie {
   final int year;
   final String rating;
   final String description;
-  final String startTime;
+  final List<DateTime> startTimes;
   final double runtime;
   final double price;
   final String imagePath;
@@ -16,7 +16,7 @@ class Movie {
     required this.year,
     required this.rating,
     required this.description,
-    required this.startTime,
+    required this.startTimes,
     required this.price,
     required this.runtime,
     required this.imagePath,

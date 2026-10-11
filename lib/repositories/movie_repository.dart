@@ -10,7 +10,7 @@ class MovieRepository {
         rating: "18",
         description:
             "With no clue how he came to be imprisoned, drugged and tortured for 15 years, a desperate man seeks revenge on his captors.",
-        startTime: "Tuesday 20 Oct 2026 15:00",
+        startTimes: [],
         price: 7.50,
         runtime: 120,
         imagePath: "assets/images/oldboy-(2003).jpg",
@@ -22,7 +22,7 @@ class MovieRepository {
         rating: '18',
         description:
             'A burger-loving hit man, his philosophical partner, a drug-addled gangster’s moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.',
-        startTime: 'Wednesday 14 Oct 2026 18:00',
+        startTimes: [],
         price: 8.00,
         runtime: 154,
         imagePath: "assets/images/pulp-fiction-(1994).jpg",
@@ -34,7 +34,7 @@ class MovieRepository {
         rating: '18',
         description:
             'Ray and Ken, two hit men, are in Bruges, Belgium, waiting for their next mission. While they are there they have time to think and discuss their previous assignment. When the mission is revealed to Ken, it is not what he expected.',
-        startTime: 'Saturday 24 Oct 2026 19:00',
+        startTimes: [],
         price: 6.50,
         runtime: 108,
         imagePath: 'assets/images/in-bruges-(2008).jpg',
