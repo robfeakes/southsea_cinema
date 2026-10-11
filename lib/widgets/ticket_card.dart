@@ -8,6 +8,17 @@ class TicketCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("TICKETCARD PLACEHOLDER ${movie.id}");
+    return Column(
+      children: [
+        Text("BOOK TICKETS"),
+        for (var time in movie.startTimes)
+          Row(
+            children: [
+              Text(time),
+              ElevatedButton(onPressed: () {}, child: Text("BOOK NOW"))
+            ],
+          ),
+      ],
+    );
   }
 }

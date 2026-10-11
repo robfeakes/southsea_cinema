@@ -10,7 +10,10 @@ class MovieRepository {
         rating: "18",
         description:
             "With no clue how he came to be imprisoned, drugged and tortured for 15 years, a desperate man seeks revenge on his captors.",
-        startTimes: [],
+        startTimes: [
+          "Monday 26 Oct 2026 15:00",
+          "Saturday 31 Oct 2026 20:00",
+        ],
         price: 7.50,
         runtime: 120,
         imagePath: "assets/images/oldboy-(2003).jpg",
