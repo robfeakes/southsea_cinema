@@ -34,7 +34,7 @@ class MovieCard extends StatelessWidget {
                 Text(
                   "(${movie.rating})",
                   style: TextStyle(
-                    color: cinemaFontWhite,
+                    color: cinemaFontMuted,
                     fontSize: 16,
                   ),
                 ),
