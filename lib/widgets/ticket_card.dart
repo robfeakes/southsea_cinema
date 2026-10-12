@@ -23,7 +23,10 @@ class TicketCard extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MovieListing(movie: movie);
+                        return MovieListing(
+                          movie: movie,
+                          time: time,
+                        );
                       },
                     ),
                   );

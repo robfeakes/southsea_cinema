@@ -5,8 +5,9 @@ import "package:southsea_cinema/models/movie.dart";
 
 class MovieListing extends StatelessWidget {
   final Movie movie;
+  final String time;
 
-  const MovieListing({super.key, required this.movie});
+  const MovieListing({super.key, required this.movie, required this.time});
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +28,15 @@ class MovieListing extends StatelessWidget {
             Row(
               spacing: 8,
               children: [
-                const Text("Oldboy (2003) (18)",
+                Text("${movie.name} (${movie.year}) (${movie.rating})",
                     style: TextStyle(
                       color: cinemaFontWhite,
                       fontSize: 32,
                     )),
               ],
             ),
-            const Text(
-              "Southsea Cinema Room\nTuesday 20 Oct 2026, 18:00 - ends at 19:54",
+            Text(
+              "Southsea Cinema Room\n$time - ends at 19:54",
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 16,
