@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import "package:southsea_cinema/models/movie.dart";
-import "package:southsea_cinema/widgets/movie_card.dart";
-import "package:southsea_cinema/repositories/movie_repository.dart";
-
-//should wrap in theme instead of individual text widget style?
 
 class MovieListing extends StatelessWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
-    final MovieRepository repository = MovieRepository();
-    final List<Movie> movies = repository.getMovies();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle, style: cinemaHeaderStyle),
