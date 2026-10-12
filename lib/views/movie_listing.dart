@@ -35,8 +35,29 @@ class MovieListing extends StatelessWidget {
                     )),
               ],
             ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 8,
+              children: [
+                Image.asset(
+                  movie.imagePath,
+                  width: 80,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ),
+                Expanded(
+                  child: Text(
+                    movie.description,
+                    style: TextStyle(
+                      color: cinemaFontWhite,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Text(
-              "Southsea Cinema Room\n$time - ends at 19:54",
+              "Southsea Cinema Room\n$time",
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 16,
