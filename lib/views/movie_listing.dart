@@ -55,7 +55,7 @@ class MovieListing extends StatelessWidget {
               "Tickets",
               style: cinemaHeaderStyle,
             ),
-            TicketSelect(),
+            TicketSelect(price: movie.price),
           ],
         ),
       ),
@@ -64,7 +64,9 @@ class MovieListing extends StatelessWidget {
 }
 
 class TicketSelect extends StatefulWidget {
-  const TicketSelect({super.key});
+  final double price;
+
+  const TicketSelect({super.key, required this.price});
 
   @override
   State<TicketSelect> createState() {
@@ -120,7 +122,7 @@ class _TicketSelectState extends State<TicketSelect> {
               ),
             ),
             Text(
-              "Adult (£7.50)",
+              "Adult (£${widget.price.toStringAsFixed(2)})",
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 16,
