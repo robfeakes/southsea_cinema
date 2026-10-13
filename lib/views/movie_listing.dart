@@ -57,7 +57,7 @@ class MovieListing extends StatelessWidget {
               ],
             ),
             Text(
-              "Southsea Cinema Room\n$time",
+              "Southsea Cinema Room\n$time | ${movie.runtime ~/ 60}h ${movie.runtime % 60}m",
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 16,
